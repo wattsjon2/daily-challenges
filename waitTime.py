@@ -1,6 +1,3 @@
-from multiprocessing.connection import wait
-
-
 def findWaitTime(arr):
     arr.sort()
     waitTime = [0]
