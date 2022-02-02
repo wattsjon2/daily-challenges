@@ -25,10 +25,37 @@ def longestSubString(string):
     substringList.append(len(substring))        
     return max(substringList)
 
-print(longestSubString("abcabcbb"))
-print(longestSubString("bbbbb"))
-print(longestSubString("pwwkew"))
-print(longestSubString("abcd"))
-print(longestSubString("aabcd"))
+#print(longestSubString("abcabcbb"))
+#print(longestSubString("abcadbabb"))
+#print(longestSubString("bbbbb"))
+#print(longestSubString("pwwkew"))
+#print(longestSubString("abcd"))
+#print(longestSubString("aabcd"))
 
+def longestSubString2(string):
+    l = 0
+    r = 0
+    subString = set()
+    longest = 0
+    while r < len(string):
+        if string[r] not in subString:
+            longest = max(longest,r-l + 1)
+            subString.add(string[r]) 
+
+        else:
+            longest = max(longest, r-l)
+            l += 1
+
+        if string[r] == string[r-1]:
+            
+            subString.clear
+            subString.add(string[r])
+            l += 1
+
+        r += 1
+    return longest
+
+print(longestSubString2("abcabcbb"))        
+print(longestSubString2("abcadbabb"))        
+print(longestSubString2("pwwkew"))        
 
