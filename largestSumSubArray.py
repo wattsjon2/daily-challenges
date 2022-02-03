@@ -19,17 +19,37 @@ def FindLargestSubArraySum(arr):
     while l < len(arr):
         while r < len(arr):
             if sum(arr[l:r+1]) > largest:
-                largest = sum(arr[l:r+1])
-                r += 1
-            else:
-                r +=1
+                largest = sum(arr[l:r+1])               
+            r +=1
         l += 1
         r = l
     return largest
 
 
-print(FindLargestSubArraySum([-2,1,-3,4,-1,2,1,-5,4]))
-print(FindLargestSubArraySum([4,-1,2,1]))
-print(FindLargestSubArraySum([1]))
-print(FindLargestSubArraySum([-1]))
-print(FindLargestSubArraySum([5,4,-1,7,8]))
+#print(FindLargestSubArraySum([-2,1,-3,4,-1,2,1,-5,4]))
+#print(FindLargestSubArraySum([4,-1,2,1]))
+#print(FindLargestSubArraySum([1]))
+#print(FindLargestSubArraySum([-1]))
+#print(FindLargestSubArraySum([5,4,-1,7,8]))
+
+def FindLargestSubArraySum2(arr):
+    l = 0
+    r = 0
+    largest = arr[0]   
+
+    while l < len(arr):
+        if r < len(arr):
+            if sum(arr[l:r+1]) > largest:
+                largest = sum(arr[l:r+1])               
+            r +=1
+        else:    
+            l += 1
+            r = l
+    return largest
+
+
+print(FindLargestSubArraySum2([-2,1,-3,4,-1,2,1,-5,4]))
+print(FindLargestSubArraySum2([4,-1,2,1]))
+print(FindLargestSubArraySum2([1]))
+print(FindLargestSubArraySum2([-1]))
+print(FindLargestSubArraySum2([5,4,-1,7,8]))
