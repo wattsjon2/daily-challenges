@@ -1,6 +1,3 @@
-from operator import le
-from typing import Counter
-
 
 class wordle():
     def __init__ (self, givenWord = "worde", counter = 0):

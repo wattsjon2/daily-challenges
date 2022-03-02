@@ -46,3 +46,5 @@ def searchInsert(nums, target):
             else:
                 left = mid + 1
         return left
+
+print(searchInsert([1,3,5,6],4))
